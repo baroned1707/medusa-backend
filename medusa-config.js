@@ -54,8 +54,6 @@ const plugins = [
   // },
 ];
 
-console.log("STORE CORS:", STORE_CORS);
-
 module.exports = {
   projectConfig: {
     // redis_url: REDIS_URL,
