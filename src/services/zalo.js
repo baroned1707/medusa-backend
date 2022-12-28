@@ -53,6 +53,8 @@ class ZaloService extends PaymentService {
       callback_url: process.env.BACKEND_HOST + "/hook/zalo-callback",
     };
 
+    console.log("Create Payment Request Zalo", order);
+
     const data =
       config.app_id +
       "|" +
