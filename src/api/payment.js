@@ -16,7 +16,7 @@ export default (router) => {
         }
       );
 
-      console.log(req.body.data.app_trans_id, cart);
+      console.log(req.body.app_trans_id, cart);
 
       await cartService.authorizePayment(cart.id, cart);
 
