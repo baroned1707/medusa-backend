@@ -15,6 +15,8 @@ export default (router) => {
         }
       );
 
+      console.log(req.body.data.app_trans_id, cart);
+
       await cartService.authorizePayment(cart.id, cart);
 
       const order = await orderService.createFromCart(cart.id);

@@ -76,8 +76,6 @@ class ZaloService extends PaymentService {
       "Content-Type": "application/json",
     });
 
-    console.log("Payment Request Zalo", res);
-
     await this.cartService
       .setMetadata(cart.id, "app_trans_id", order.app_trans_id)
       .then((res) => {
