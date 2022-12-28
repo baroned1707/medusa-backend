@@ -8,7 +8,7 @@ export default (router) => {
 
       const [cart] = await cartService.list(
         {
-          metadata: { app_trans_id: req.body.app_trans_id },
+          metadata: { app_trans_id: req.body.data.app_trans_id },
         },
         {
           relations: ["region", "payment_sessions"],
