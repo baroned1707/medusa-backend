@@ -1,6 +1,7 @@
 export default (router) => {
   router.post("/hook/zalo-callback", async (req, res) => {
     try {
+      req.body = JSON.parse(req.body.data);
       console.log("Received Callback Zalopay", req.body);
 
       const cartService = req.scope.resolve("cartService");
@@ -8,7 +9,7 @@ export default (router) => {
 
       const [cart] = await cartService.list(
         {
-          metadata: { app_trans_id: req.body.data.app_trans_id },
+          metadata: { app_trans_id: req.body.app_trans_id },
         },
         {
           relations: ["region", "payment_sessions"],
