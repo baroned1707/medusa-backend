@@ -1,7 +1,7 @@
 export default (router) => {
   router.post("/hook/zalo-callback", async (req, res) => {
     try {
-      console.log("Received Callback Zalopay", JSON.stringify(req.body));
+      console.log("Received Callback Zalopay", req.body);
 
       const cartService = req.scope.resolve("cartService");
       const orderService = req.scope.resolve("orderService");
